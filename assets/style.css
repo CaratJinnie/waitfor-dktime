@@ -76,3 +76,12 @@
 .spotify-stage.active{display:block}
 .spotify-stage iframe{border:0;width:100%;height:100%}
 .music-empty{padding:25px;border:1px dashed var(--line);border-radius:18px;text-align:center;color:var(--muted)}
+
+/* v10 Mood Music Room */
+.mood-row{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.mood-label{font-size:.68rem;letter-spacing:.13em;font-weight:800;color:var(--muted);margin-bottom:9px}
+.mood-tabs{display:flex;gap:7px;flex-wrap:wrap}
+.mood-tab{border:1px solid var(--line);background:rgba(255,255,255,.52);border-radius:999px;padding:8px 12px;cursor:pointer;color:var(--ink);font:inherit;font-size:.78rem;transition:.18s}
+.mood-tab:hover{transform:translateY(-1px);background:rgba(255,255,255,.78)}
+.mood-tab.active{background:linear-gradient(90deg,rgba(247,202,201,.85),rgba(208,228,245,.9));font-weight:750;box-shadow:0 6px 18px rgba(80,113,140,.08)}
+.mood-summary{margin-top:9px;color:var(--muted);font-size:.72rem}
