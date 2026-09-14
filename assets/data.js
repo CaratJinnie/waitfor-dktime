@@ -306,7 +306,9 @@ window.DK_DATA={
         "ballad",
         "comfort"
       ],
-      "url": "https://weverse.io/seventeen/media/0-9509060?hl=ko"
+      "url": "https://weverse.io/seventeen/media/0-9509060?hl=ko",
+      "youtube_id": "fdMS5HTQGX4",
+      "youtube_url": "https://www.youtube.com/watch?v=fdMS5HTQGX4"
     },
     {
       "id": "c002",
@@ -324,7 +326,9 @@ window.DK_DATA={
         "사랑했던걸까",
         "ballad"
       ],
-      "url": "https://weverse.io/seventeen/media/2-105469892?hl=ko"
+      "url": "https://weverse.io/seventeen/media/2-105469892?hl=ko",
+      "youtube_id": "v3UW6oTw_ks",
+      "youtube_url": "https://www.youtube.com/watch?v=v3UW6oTw_ks"
     },
     {
       "id": "c003",
@@ -345,7 +349,9 @@ window.DK_DATA={
         "hopeful"
       ],
       "url": "https://weverse.io/seventeen/media/1-105307200?hl=ko",
-      "behind": "https://weverse.io/seventeen/media/1-105613374"
+      "behind": "https://weverse.io/seventeen/media/1-105613374",
+      "youtube_id": "FcACC2nLArk",
+      "youtube_url": "https://www.youtube.com/watch?v=FcACC2nLArk"
     },
     {
       "id": "c004",
@@ -366,7 +372,9 @@ window.DK_DATA={
         "japanese"
       ],
       "url": "https://weverse.io/seventeen/media/3-122845076?hl=ko",
-      "behind": "https://weverse.io/seventeen/media/4-127887619"
+      "behind": "https://weverse.io/seventeen/media/4-127887619",
+      "youtube_id": "v9lZPRg71Tk",
+      "youtube_url": "https://www.youtube.com/watch?v=v9lZPRg71Tk"
     },
     {
       "id": "c005",
@@ -383,7 +391,9 @@ window.DK_DATA={
         "결국 아무것도 알 수 없었지만",
         "band"
       ],
-      "url": "https://weverse.io/seventeen/media/3-156761221?hl=ko"
+      "url": "https://weverse.io/seventeen/media/3-156761221?hl=ko",
+      "youtube_id": "d6ZY8MH3L-A",
+      "youtube_url": "https://www.youtube.com/watch?v=d6ZY8MH3L-A"
     },
     {
       "id": "c006",
@@ -401,7 +411,9 @@ window.DK_DATA={
         "bright",
         "cheer"
       ],
-      "url": "https://weverse.io/seventeen/media/4-168877483?hl=ko"
+      "url": "https://weverse.io/seventeen/media/4-168877483?hl=ko",
+      "youtube_id": "4cIniILXP7I",
+      "youtube_url": "https://www.youtube.com/watch?v=4cIniILXP7I"
     },
     {
       "id": "c007",
@@ -421,7 +433,9 @@ window.DK_DATA={
         "japanese",
         "nostalgia"
       ],
-      "url": "https://weverse.io/seventeen/media/0-160741008?hl=ko"
+      "url": "https://weverse.io/seventeen/media/0-160741008?hl=ko",
+      "youtube_id": "0nOpfN3NWnA",
+      "youtube_url": "https://www.youtube.com/watch?v=0nOpfN3NWnA"
     },
     {
       "id": "c008",
@@ -440,7 +454,9 @@ window.DK_DATA={
         "night"
       ],
       "url": "https://weverse.io/seventeen/media/3-184961599?hl=ko",
-      "behind": "https://weverse.io/seventeen/media/3-186195519?hl=ko"
+      "behind": "https://weverse.io/seventeen/media/3-186195519?hl=ko",
+      "youtube_id": "LfOe8NCCrQo",
+      "youtube_url": "https://www.youtube.com/watch?v=LfOe8NCCrQo"
     },
     {
       "id": "c009",
@@ -458,7 +474,9 @@ window.DK_DATA={
         "universe",
         "comfort"
       ],
-      "url": "https://weverse.io/seventeen/media/3-206219518?hl=ko"
+      "url": "https://weverse.io/seventeen/media/3-206219518?hl=ko",
+      "youtube_id": "dzXy8lA0qeA",
+      "youtube_url": "https://www.youtube.com/watch?v=dzXy8lA0qeA"
     }
   ]
 };

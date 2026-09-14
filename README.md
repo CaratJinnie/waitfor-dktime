@@ -17,3 +17,5 @@
 这版使用 data.js，所以直接双击 HTML 也能运行大部分互动；上传 GitHub Pages 后页面之间会正常跳转。
 
 - covers.html — DK Cover Archive（第一批 9 首官方 Cover）
+
+- v7: covers.html upgraded to a custom YouTube player using the user's DK player artwork, with random initial track, playlist switching, favorite, previous/next, play/pause, shuffle, repeat, seek bar.

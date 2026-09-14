@@ -2,7 +2,7 @@
 <html lang="zh-Hans">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DK Cover Archive · Waiting for DK</title>
+<title>DK Cover Player · Waiting for DK</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
@@ -11,64 +11,150 @@
 <div class="wrap">
 <nav class="site-nav"></nav>
 
-<section class="cover-hero">
- <article class="glass section">
-  <div class="eyebrow">DK COVER ARCHIVE</div>
-  <h1 class="page-title">When you just<br>want to hear him sing.</h1>
-  <p class="lede">从语言、情绪和原唱继续探索。每一首都保留官方来源，不把粉丝搬运当主链接。</p>
-  <div class="row"><a class="btn" href="archive.html">← Back to Archive</a><button class="btn primary" id="randomCover">🎲 Random Cover</button></div>
- </article>
- <aside class="glass cover-stats">
-  <div><div class="eyebrow">FIRST COLLECTION</div><div class="number" id="coverCount">9</div></div>
-  <p class="lede">第一批先从已经确认的官方 Cover 开始。之后继续扩充。</p>
- </aside>
+<section class="glass section">
+ <div class="eyebrow">DK COVER PLAYER</div>
+ <h1 class="page-title">Press play,<br>and let DK find you.</h1>
+ <p class="lede">进入页面会随机选一首 DK Cover。播放器使用 YouTube 官方嵌入，下面歌单可以直接切歌。</p>
 </section>
 
-<section class="glass section">
- <div class="section-head">
-  <div><div class="eyebrow">FILTER BY FEELING</div><h2 class="section-title">What do you want to hear tonight?</h2></div>
- </div>
- <div class="filters">
-  <button class="filter active" data-filter="all">All</button>
-  <button class="filter" data-filter="comfort">🌻 Comfort</button>
-  <button class="filter" data-filter="cheer">✨ Cheer up</button>
-  <button class="filter" data-filter="night">🌙 Night</button>
-  <button class="filter" data-filter="powerful">🔥 Powerful</button>
-  <button class="filter" data-filter="ko">한국어</button>
-  <button class="filter" data-filter="ja">日本語</button>
-  <button class="filter" data-filter="en">English</button>
- </div>
- <div class="cover-grid" id="coverGrid"></div>
+<section class="dk-player-page" style="margin-top:18px">
+ <article class="glass dk-player-card">
+  <div class="skin-player">
+    <div class="player-video"><div id="ytPlayer"></div></div>
+    <img class="player-skin" src="assets/dk-player-skin.png" alt="DK player skin">
+    <div class="player-progress" id="progressHit">
+      <div class="player-progress-track"><div class="player-progress-fill" id="progressFill"></div></div>
+    </div>
+
+    <button class="player-hit hit-heart" id="heartBtn" aria-label="Favorite"></button>
+    <button class="player-hit hit-prev" id="prevBtn" aria-label="Previous"></button>
+    <button class="player-hit hit-play" id="playBtn" aria-label="Play or pause"></button>
+    <button class="player-hit hit-next" id="nextBtn" aria-label="Next"></button>
+    <button class="player-hit hit-shuffle" id="shuffleBtn" aria-label="Shuffle"></button>
+    <button class="player-hit hit-repeat" id="repeatBtn" aria-label="Repeat"></button>
+
+    <div class="play-state-icon" id="playIcon">▶</div>
+    <div class="favorite-state" id="favoriteState">♥</div>
+    <div class="mode-dot shuffle-dot" id="shuffleDot"></div>
+    <div class="mode-dot repeat-dot" id="repeatDot"></div>
+  </div>
+
+  <div class="now-playing">
+    <div class="eyebrow">NOW PLAYING</div>
+    <h2 id="nowTitle">Loading…</h2>
+    <div class="now-meta" id="nowArtist"></div>
+    <div class="time-row"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
+    <div class="row" style="margin-top:12px">
+      <a class="btn" id="youtubeLink" target="_blank">YouTube ↗</a>
+      <a class="btn" id="behindLink" target="_blank" style="display:none">Behind ↗</a>
+    </div>
+  </div>
+ </article>
+
+ <aside class="glass playlist-panel">
+   <div class="eyebrow">PLAYLIST</div>
+   <h2 class="section-title">DK Covers</h2>
+   <p class="small">点任何一首就会直接切换播放器。</p>
+   <div class="playlist" id="playlist"></div>
+   <p class="player-note">♡ 收藏会先保存在你当前浏览器；Shuffle / Repeat 状态也会记住。YouTube 是否能自动播放会受浏览器的自动播放规则影响。</p>
+ </aside>
 </section>
 
 <footer class="footer"></footer>
 </div>
+
 <div class="modal-back" id="modalBack"><div class="modal"><button class="close" id="modalClose">×</button><div id="modalContent"></div></div></div>
-<script src="assets/data.js"></script><script src="assets/app.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
 <script>
-let coverFilter="all";
-function languageLabel(x){return x==="ko"?"Korean":x==="ja"?"Japanese":"English"}
-function renderCovers(){
- let arr=DATA.covers||[];
- if(coverFilter!=="all")arr=arr.filter(c=>c.language===coverFilter||c.moods.includes(coverFilter)||c.tags.includes(coverFilter));
- coverGrid.innerHTML=arr.map(c=>`
- <article class="cover-card">
-  <div>
-   <div class="eyebrow">${languageLabel(c.language)} · COVER</div>
-   <div class="cover-title">${c.title}${c.subtitle?` <small>(${c.subtitle})</small>`:""}</div>
-   <div class="artist">Original · ${c.original_artist}</div>
-   <div class="cover-tags">${c.moods.slice(0,3).map(t=>`<span>${t}</span>`).join("")}</div>
-  </div>
-  <div class="row">
-   <a class="btn primary" href="${c.url}" target="_blank">Listen / Watch ↗</a>
-   ${c.behind?`<a class="btn" href="${c.behind}" target="_blank">Behind ↗</a>`:""}
-  </div>
- </article>`).join("");
+let player=null;
+let covers=DATA.covers||[];
+let currentIndex=0;
+let shuffleMode=localStorage.getItem("dk-shuffle")==="1";
+let repeatMode=localStorage.getItem("dk-repeat")==="1";
+let tick=null;
+
+function formatTime(sec){
+ sec=Math.max(0,Math.floor(Number(sec)||0));
+ const m=Math.floor(sec/60), s=sec%60;
+ return `${m}:${String(s).padStart(2,"0")}`;
 }
+function randomIndex(exclude){
+ if(covers.length<2)return 0;
+ let i=exclude;
+ while(i===exclude)i=Math.floor(Math.random()*covers.length);
+ return i;
+}
+function loadTrack(i, autoplay=true){
+ currentIndex=(i+covers.length)%covers.length;
+ const c=covers[currentIndex];
+ nowTitle.textContent=c.title+(c.subtitle?` (${c.subtitle})`:"");
+ nowArtist.textContent=`Original · ${c.original_artist}`;
+ youtubeLink.href=c.youtube_url||`https://www.youtube.com/watch?v=${c.youtube_id}`;
+ if(c.behind){behindLink.href=c.behind;behindLink.style.display=""}else behindLink.style.display="none";
+ renderPlaylist();
+ refreshFavorite();
+ if(player&&player.loadVideoById){
+   if(autoplay)player.loadVideoById(c.youtube_id);
+   else player.cueVideoById(c.youtube_id);
+ }
+}
+function renderPlaylist(){
+ playlist.innerHTML=covers.map((c,i)=>`
+ <button class="track-item ${i===currentIndex?"active":""}" data-i="${i}">
+  <span class="track-num">${String(i+1).padStart(2,"0")}</span>
+  <span><span class="track-title">${c.title}${c.subtitle?` · ${c.subtitle}`:""}</span><span class="track-artist">${c.original_artist}</span></span>
+  <span class="track-lang">${c.language}</span>
+ </button>`).join("");
+ document.querySelectorAll(".track-item").forEach(b=>b.onclick=()=>loadTrack(Number(b.dataset.i),true));
+}
+function favoriteKey(){return "dk-fav-"+covers[currentIndex].id}
+function refreshFavorite(){favoriteState.classList.toggle("show",localStorage.getItem(favoriteKey())==="1")}
+heartBtn.onclick=()=>{const k=favoriteKey();if(localStorage.getItem(k)==="1")localStorage.removeItem(k);else localStorage.setItem(k,"1");refreshFavorite()}
+prevBtn.onclick=()=>{loadTrack(shuffleMode?randomIndex(currentIndex):currentIndex-1,true)}
+nextBtn.onclick=()=>{loadTrack(shuffleMode?randomIndex(currentIndex):currentIndex+1,true)}
+playBtn.onclick=()=>{if(!player)return;const s=player.getPlayerState();if(s===YT.PlayerState.PLAYING)player.pauseVideo();else player.playVideo()}
+shuffleBtn.onclick=()=>{shuffleMode=!shuffleMode;localStorage.setItem("dk-shuffle",shuffleMode?"1":"0");shuffleDot.classList.toggle("show",shuffleMode)}
+repeatBtn.onclick=()=>{repeatMode=!repeatMode;localStorage.setItem("dk-repeat",repeatMode?"1":"0");repeatDot.classList.toggle("show",repeatMode)}
+progressHit.onclick=e=>{if(!player||!player.getDuration)return;const rect=progressHit.getBoundingClientRect();const ratio=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));player.seekTo(player.getDuration()*ratio,true)}
+
+function onYouTubeIframeAPIReady(){
+ currentIndex=Math.floor(Math.random()*covers.length);
+ const c=covers[currentIndex];
+ player=new YT.Player("ytPlayer",{
+  videoId:c.youtube_id,
+  playerVars:{autoplay:1,controls:0,rel:0,modestbranding:1,playsinline:1,enablejsapi:1},
+  events:{
+   onReady:()=>{
+    loadTrack(currentIndex,false);
+    shuffleDot.classList.toggle("show",shuffleMode);
+    repeatDot.classList.toggle("show",repeatMode);
+    player.playVideo();
+    tick=setInterval(()=>{
+      if(!player||!player.getDuration)return;
+      const dur=player.getDuration()||0,cur=player.getCurrentTime()||0;
+      duration.textContent=formatTime(dur);currentTime.textContent=formatTime(cur);
+      progressFill.style.width=dur?`${(cur/dur)*100}%`:"0%";
+    },500);
+   },
+   onStateChange:e=>{
+    playIcon.textContent=e.data===YT.PlayerState.PLAYING?"Ⅱ":"▶";
+    if(e.data===YT.PlayerState.ENDED){
+      if(repeatMode){player.seekTo(0);player.playVideo()}
+      else loadTrack(shuffleMode?randomIndex(currentIndex):currentIndex+1,true);
+    }
+   }
+  }
+ });
+}
+
 document.addEventListener("DOMContentLoaded",()=>{
- initNav("archive"); coverCount.textContent=(DATA.covers||[]).length; renderCovers();
- document.querySelectorAll("[data-filter]").forEach(b=>b.onclick=()=>{document.querySelectorAll("[data-filter]").forEach(x=>x.classList.remove("active"));b.classList.add("active");coverFilter=b.dataset.filter;renderCovers()});
- randomCover.onclick=()=>{const arr=DATA.covers||[];const c=arr[Math.floor(Math.random()*arr.length)];window.open(c.url,"_blank")}
+ initNav("archive");
+ renderPlaylist();
+ shuffleDot.classList.toggle("show",shuffleMode);
+ repeatDot.classList.toggle("show",repeatMode);
 });
 </script>
-</body></html>
+</body>
+</html>

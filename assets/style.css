@@ -29,3 +29,40 @@
 .cover-tags span{padding:5px 7px;border:1px solid var(--line);border-radius:999px;font-size:.64rem;color:#617b8f;background:rgba(255,255,255,.58)}
 @media(max-width:900px){.cover-hero{grid-template-columns:1fr}.cover-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:690px){.cover-grid{grid-template-columns:1fr}}
+
+/* v7 DK custom YouTube player */
+.dk-player-page{display:grid;grid-template-columns:minmax(0,720px) 1fr;gap:22px;align-items:start}
+.dk-player-card{padding:18px}
+.skin-player{position:relative;width:min(100%,687px);aspect-ratio:687/1065;margin:0 auto}
+.player-video{position:absolute;left:8.44%;top:6.29%;width:84.43%;height:53.99%;z-index:1;background:#000;overflow:hidden}
+.player-video iframe,.player-video>div{width:100%!important;height:100%!important}
+.player-skin{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
+.player-progress{position:absolute;left:9.17%;top:75.75%;width:82.1%;height:18px;z-index:5;cursor:pointer;display:flex;align-items:center}
+.player-progress-track{width:100%;height:4px;background:rgba(255,255,255,.32);border-radius:99px;overflow:hidden;box-shadow:0 0 0 1px rgba(23,50,75,.10)}
+.player-progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--pink));border-radius:99px}
+.player-hit{position:absolute;z-index:6;border:0;background:transparent;cursor:pointer;border-radius:999px}
+.player-hit:hover{background:rgba(179,206,229,.10)}
+.hit-heart{left:7.5%;top:80.7%;width:12%;height:8.8%}
+.hit-prev{left:25.3%;top:80.3%;width:13%;height:9.2%}
+.hit-play{left:43.4%;top:78.8%;width:15.5%;height:11.5%;background:rgba(0,0,0,.16)}
+.hit-next{left:66.4%;top:80.3%;width:12%;height:9.2%}
+.hit-shuffle{left:7.2%;top:90%;width:13%;height:7.2%}
+.hit-repeat{right:4.2%;top:90%;width:13%;height:7.2%}
+.play-state-icon{position:absolute;z-index:7;left:50.95%;top:84.6%;transform:translate(-50%,-50%);width:63px;height:63px;border-radius:50%;display:grid;place-items:center;pointer-events:none;background:rgba(0,0,0,.48);border:1px solid rgba(255,255,255,.55);color:white;font-size:24px;backdrop-filter:blur(5px)}
+.favorite-state{position:absolute;z-index:7;left:13.5%;top:85.2%;transform:translate(-50%,-50%);pointer-events:none;color:#f7cac9;font-size:22px;text-shadow:0 0 14px rgba(247,202,201,.65);opacity:0}
+.favorite-state.show{opacity:1}
+.mode-dot{position:absolute;z-index:7;width:8px;height:8px;border-radius:50%;background:var(--pink);box-shadow:0 0 12px rgba(247,202,201,.9);opacity:0;pointer-events:none}
+.mode-dot.show{opacity:1}.shuffle-dot{left:13%;top:95%}.repeat-dot{right:10%;top:95%}
+.now-playing{margin-top:3px;padding:17px 18px;border-radius:20px;background:rgba(255,255,255,.5);border:1px solid var(--line)}
+.now-playing h2{margin:4px 0 3px;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:2.15rem}
+.now-meta{color:var(--muted);font-size:.82rem}.time-row{display:flex;justify-content:space-between;margin-top:9px;color:var(--muted);font-size:.72rem}
+.playlist-panel{padding:22px;position:sticky;top:16px}
+.playlist{display:grid;gap:8px;margin-top:14px;max-height:760px;overflow:auto;padding-right:3px}
+.track-item{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;padding:11px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.48);cursor:pointer;text-align:left;color:var(--ink);transition:.2s}
+.track-item:hover{transform:translateX(2px);background:rgba(255,255,255,.72)}
+.track-item.active{background:linear-gradient(90deg,rgba(208,228,245,.75),rgba(253,219,219,.65));box-shadow:0 8px 24px rgba(80,113,140,.08)}
+.track-num{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.35rem;color:#69879e}
+.track-title{font-weight:700}.track-artist{display:block;margin-top:2px;color:var(--muted);font-size:.72rem}.track-lang{font-size:.64rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.player-note{margin-top:12px;color:var(--muted);font-size:.76rem;line-height:1.55}
+@media(max-width:980px){.dk-player-page{grid-template-columns:1fr}.playlist-panel{position:static}.playlist{max-height:none}}
+@media(max-width:520px){.dk-player-card{padding:8px}.play-state-icon{width:46px;height:46px;font-size:18px}.now-playing h2{font-size:1.7rem}.playlist-panel{padding:17px}}
