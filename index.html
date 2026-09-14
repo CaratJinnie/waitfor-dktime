@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Waiting for DK</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/style.css"></head><body><div class="wrap"><nav class="site-nav"></nav>
+<section class="home-hero">
+ <article class="glass home-copy">
+  <div class="eyebrow">UNTIL WE MEET AGAIN</div><h1 class="page-title">Waiting<br>for DK</h1>
+  <span style="margin-top:12px;letter-spacing:.22em;color:#68869e;font-weight:650">도겸 · DOKYEOM</span>
+  <div class="ddayrow"><div class="dday" data-dday>D-540</div><div class="small">until discharge day</div></div>
+  <div class="timer"><div class="time"><b id="days">540</b><span>Days</span></div><div class="time"><b id="hours">00</b><span>Hours</span></div><div class="time"><b id="mins">00</b><span>Minutes</span></div><div class="time"><b id="secs">00</b><span>Seconds</span></div></div>
+ </article>
+ <aside class="glass hero-photo">
+  <img src="https://phinf.wevpstatic.net/MjAyMzEwMTBfMTEg/MDAxNjk2OTQxNDYyNzQx.VY6lxFN41wAxR3_UIO_YXZTiPyUtjYcH9cOyDyJUSwYg.O2MoQxJjuRHwVXfjaEk6jqKbh5cjfe8d4ByTMToeXW4g.JPEG/ce57b44a-7345-434e-88b3-699c1778faa3.jpeg?type=w670" alt="DK official photo">
+  <div class="photo-caption"><small>OFFICIAL PHOTO · WEVERSE</small><strong>DK · SEVENTEENTH HEAVEN</strong></div>
+ </aside>
+</section>
+<section class="glass section">
+ <div class="section-head"><div><div class="eyebrow">TODAY</div><h2 class="section-title">A little closer every day.</h2></div><strong data-progress-text>6 / 546 days</strong></div>
+ <div class="progressbar"><div class="fill" data-progress-fill></div></div>
+</section>
+<section class="glass section">
+ <div class="section-head"><div><div class="eyebrow">CHOOSE YOUR PATH</div><h2 class="section-title">Where do you want to go today?</h2></div><p class="lede">首页只保留入口。真正的内容藏在不同房间里，让每次点击都像继续往 DK Archive 深处走。</p></div>
+ <div class="portal-grid">
+  <a class="portal" href="explore.html"><span class="icon">🪐</span><div><b>Explore DK</b><span>从心情、随机记忆与 DK Universe 开始。</span></div></a>
+  <a class="portal" href="calendar.html"><span class="icon">🗓️</span><div><b>Countdown Calendar</b><span>查看每一天的 D-Day。</span></div></a>
+  <a class="portal" href="archive.html"><span class="icon">🔎</span><div><b>DK Archive</b><span>搜索、筛选、寻找某个时期或某种 DK。</span></div></a>
+  <a class="portal" href="timeline.html"><span class="icon">🕰️</span><div><b>Era Timeline</b><span>从 2015 一路滑到 Welcome Back。</span></div></a>
+  <a class="portal" href="now.html"><span class="icon">💬</span><div><b>DK Now</b><span>官方社交入口与近期动态。</span></div></a>
+  <a class="portal" href="explore.html#surprise"><span class="icon">🎲</span><div><b>Surprise Me</b><span>什么都别选，随机遇见一段 DK Memory。</span></div></a>
+ </div>
+</section>
+<section class="glass section"><div class="daily-card" id="dailyQuote"></div></section>
+<footer class="footer"></footer></div><div class="modal-back" id="modalBack"><div class="modal"><button class="close" id="modalClose">×</button><div id="modalContent"></div></div></div><script src="assets/data.js"></script><script src="assets/app.js"></script><script>document.addEventListener("DOMContentLoaded",()=>{const q=DATA.quotes[Math.floor(Math.random()*DATA.quotes.length)];dailyQuote.innerHTML=`<div class="eyebrow">DK SAID THIS TODAY</div><div class="ko">${q.ko}</div><p class="lede">${q[LANG]||q.en}</p><a class="btn" target="_blank" href="${q.url}">${TEXT[LANG].open} ↗</a>`})</script><script>document.addEventListener("DOMContentLoaded",()=>initNav("home"));</script></body></html>
