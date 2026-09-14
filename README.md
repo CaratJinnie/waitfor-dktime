@@ -21,3 +21,5 @@
 - v7: covers.html upgraded to a custom YouTube player using the user's DK player artwork, with random initial track, playlist switching, favorite, previous/next, play/pause, shuffle, repeat, seek bar.
 
 - v8: Music Room categories: Covers / Solo / OST / Special, mixed official YouTube + Spotify embeds.
+
+- v9: Music Room is now YouTube-only for Covers / Solo / OST / Special so every track uses the same custom player UI.

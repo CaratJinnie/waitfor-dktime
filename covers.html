@@ -14,7 +14,7 @@
 <section class="glass section">
  <div class="eyebrow">DK MUSIC ROOM</div>
  <h1 class="page-title">Press play,<br>and let DK find you.</h1>
- <p class="lede">Covers、Solo、OST 和 Special 都放进同一个音乐房间。进入页面会先随机遇见一首。</p>
+ <p class="lede">Covers、Solo、OST 和 Special 都放进同一个音乐房间，并统一使用 YouTube。进入页面会先随机遇见一首。</p>
  <div class="music-tabs">
    <button class="music-tab active" data-cat="all">ALL</button>
    <button class="music-tab" data-cat="cover">COVERS</button>
@@ -69,7 +69,7 @@
    <h2 class="section-title" id="playlistTitle">All DK Music</h2>
    <p class="small">点任何一首就会切歌。上面的分类只改变歌单，不改变播放器设计。</p>
    <div class="playlist" id="playlist"></div>
-   <p class="player-note">YouTube 曲目使用官方嵌入；Solo / OST / Special 优先使用 Spotify 官方嵌入。浏览器可能要求你第一次手动点播放。</p>
+   <p class="player-note">全部曲目统一使用 YouTube 嵌入，所以播放器外观和控制方式都会保持一致。浏览器可能要求你第一次手动点播放。</p>
  </aside>
 </section>
 
@@ -81,15 +81,12 @@
 <script src="assets/data.js"></script>
 <script src="assets/app.js"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
-<script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
 <script>
 let allTracks=DATA.music||[];
 let filtered=allTracks.slice();
 let currentIndex=0;
 let currentTrack=null;
 let ytPlayer=null;
-let spotifyController=null;
-let spotifyReady=false;
 let shuffleMode=localStorage.getItem("dk-shuffle")==="1";
 let repeatMode=localStorage.getItem("dk-repeat")==="1";
 let currentCategory="all";
@@ -112,13 +109,13 @@ function categoryTitle(cat){
 function favoriteKey(){return currentTrack?`dk-fav-${currentTrack.id}`:"dk-fav-none"}
 function refreshFavorite(){favoriteState.classList.toggle("show",localStorage.getItem(favoriteKey())==="1")}
 function showProvider(provider){
- youtubeStage.style.display=provider==="youtube"?"block":"none";
- spotifyStage.classList.toggle("active",provider==="spotify");
- providerBadge.textContent=provider==="youtube"?"YouTube":"Spotify";
- progressHit.style.opacity=provider==="youtube"?"1":"0";
- progressHit.style.pointerEvents=provider==="youtube"?"auto":"none";
- currentTime.style.opacity=provider==="youtube"?"1":"0";
- duration.style.opacity=provider==="youtube"?"1":"0";
+ youtubeStage.style.display="block";
+ spotifyStage.classList.remove("active");
+ providerBadge.textContent="YouTube";
+ progressHit.style.opacity="1";
+ progressHit.style.pointerEvents="auto";
+ currentTime.style.opacity="1";
+ duration.style.opacity="1";
 }
 function renderPlaylist(){
  playlistTitle.textContent=categoryTitle(currentCategory);
@@ -138,17 +135,7 @@ function updateMeta(t){
  if(t.behind){behindLink.href=t.behind;behindLink.style.display=""}else behindLink.style.display="none";
  refreshFavorite();renderPlaylist();
 }
-function loadSpotify(t,autoplay=true){
- showProvider("spotify");
- progressFill.style.width="0%";
- playIcon.textContent="▶";
- if(spotifyController&&spotifyReady){
-   spotifyController.loadUri(`spotify:track:${t.spotify_id}`);
-   if(autoplay)setTimeout(()=>spotifyController.play(),350);
- }else{
-   spotifyStage.innerHTML=`<iframe src="https://open.spotify.com/embed/track/${t.spotify_id}?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
- }
-}
+
 function loadYoutube(t,autoplay=true){
  showProvider("youtube");
  if(ytPlayer&&ytPlayer.loadVideoById){
@@ -160,8 +147,7 @@ function loadTrack(i,autoplay=true){
  currentIndex=(i+filtered.length)%filtered.length;
  currentTrack=filtered[currentIndex];
  updateMeta(currentTrack);
- if(currentTrack.provider==="youtube")loadYoutube(currentTrack,autoplay);
- else loadSpotify(currentTrack,autoplay);
+ loadYoutube(currentTrack,autoplay);
 }
 function nextTrack(){loadTrack(shuffleMode?randomIndex(currentIndex):currentIndex+1,true)}
 function prevTrack(){loadTrack(shuffleMode?randomIndex(currentIndex):currentIndex-1,true)}
@@ -176,19 +162,12 @@ nextBtn.onclick=nextTrack;
 shuffleBtn.onclick=()=>{shuffleMode=!shuffleMode;localStorage.setItem("dk-shuffle",shuffleMode?"1":"0");shuffleDot.classList.toggle("show",shuffleMode)};
 repeatBtn.onclick=()=>{repeatMode=!repeatMode;localStorage.setItem("dk-repeat",repeatMode?"1":"0");repeatDot.classList.toggle("show",repeatMode)};
 playBtn.onclick=()=>{
- if(!currentTrack)return;
- if(currentTrack.provider==="youtube"){
-   if(!ytPlayer)return;
-   const s=ytPlayer.getPlayerState();
-   s===YT.PlayerState.PLAYING?ytPlayer.pauseVideo():ytPlayer.playVideo();
- }else if(spotifyController&&spotifyReady){
-   spotifyController.togglePlay();
- }else{
-   window.open(currentTrack.url,"_blank");
- }
+ if(!currentTrack||!ytPlayer)return;
+ const s=ytPlayer.getPlayerState();
+ s===YT.PlayerState.PLAYING?ytPlayer.pauseVideo():ytPlayer.playVideo();
 };
 progressHit.onclick=e=>{
- if(!currentTrack||currentTrack.provider!=="youtube"||!ytPlayer||!ytPlayer.getDuration)return;
+ if(!currentTrack||!ytPlayer||!ytPlayer.getDuration)return;
  const rect=progressHit.getBoundingClientRect(),ratio=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));
  ytPlayer.seekTo(ytPlayer.getDuration()*ratio,true);
 };
@@ -208,36 +187,20 @@ function onYouTubeIframeAPIReady(){
    playerVars:{autoplay:0,controls:0,rel:0,playsinline:1,enablejsapi:1},
    events:{
     onStateChange:e=>{
-      if(currentTrack&&currentTrack.provider==="youtube")playIcon.textContent=e.data===YT.PlayerState.PLAYING?"Ⅱ":"▶";
-      if(e.data===YT.PlayerState.ENDED&&currentTrack&&currentTrack.provider==="youtube"){
+      if(currentTrack)playIcon.textContent=e.data===YT.PlayerState.PLAYING?"Ⅱ":"▶";
+      if(e.data===YT.PlayerState.ENDED&&currentTrack){
         repeatMode?(ytPlayer.seekTo(0),ytPlayer.playVideo()):nextTrack();
       }
     }
    }
  });
  tick=setInterval(()=>{
-   if(!currentTrack||currentTrack.provider!=="youtube"||!ytPlayer||!ytPlayer.getDuration)return;
+   if(!currentTrack||!ytPlayer||!ytPlayer.getDuration)return;
    const dur=ytPlayer.getDuration()||0,cur=ytPlayer.getCurrentTime()||0;
    duration.textContent=formatTime(dur);currentTime.textContent=formatTime(cur);progressFill.style.width=dur?`${cur/dur*100}%`:"0%";
  },500);
 }
 
-window.onSpotifyIframeApiReady=(IFrameAPI)=>{
- const element=document.getElementById("spotifyEmbed");
- const firstSpotify=allTracks.find(t=>t.provider==="spotify");
- if(!firstSpotify)return;
- IFrameAPI.createController(element,{uri:`spotify:track:${firstSpotify.spotify_id}`,width:"100%",height:"100%"},controller=>{
-   spotifyController=controller;spotifyReady=true;
-   controller.addListener("playback_update",e=>{
-     if(currentTrack&&currentTrack.provider==="spotify"){
-       playIcon.textContent=e.data.isPaused?"▶":"Ⅱ";
-       if(e.data.duration&&e.data.position>=e.data.duration-500){
-         if(!e.data.isPaused){repeatMode?controller.seek(0):nextTrack()}
-       }
-     }
-   });
- });
-};
 
 document.addEventListener("DOMContentLoaded",()=>{
  initNav("archive");
