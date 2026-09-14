@@ -650,6 +650,22 @@ window.DK_DATA={
       "youtube_id": "C-6VN7S6QDc"
     },
     {
+      "id": "solo002",
+      "category": "solo",
+      "title": "Happy Virus (DK Solo)",
+      "subtitle": "HAPPY BURSTDAY",
+      "artist": "SEVENTEEN · DK",
+      "provider": "youtube",
+      "youtube_id": "tQxisM9mxp4",
+      "url": "https://www.youtube.com/watch?v=tQxisM9mxp4",
+      "language": "ko",
+      "moods": [
+        "cheer",
+        "bright",
+        "happy"
+      ]
+    },
+    {
       "id": "ost001",
       "category": "ost",
       "title": "Go!",
