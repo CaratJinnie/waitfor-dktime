@@ -639,15 +639,15 @@ window.DK_DATA={
       "title": "Rockstar (DK Solo)",
       "subtitle": "Serenade",
       "artist": "DxS · DOKYEOM",
-      "provider": "spotify",
-      "spotify_id": "6pPy2mkcDeVu7SJaOGnCUv",
-      "url": "https://open.spotify.com/track/6pPy2mkcDeVu7SJaOGnCUv",
+      "provider": "youtube",
+      "url": "https://www.youtube.com/watch?v=C-6VN7S6QDc",
       "language": "ko",
       "moods": [
         "powerful",
         "cheer",
         "energetic"
-      ]
+      ],
+      "youtube_id": "C-6VN7S6QDc"
     },
     {
       "id": "ost001",
@@ -655,15 +655,15 @@ window.DK_DATA={
       "title": "Go!",
       "subtitle": "Twenty-Five Twenty-One OST Part 5",
       "artist": "DOKYEOM",
-      "provider": "spotify",
-      "spotify_id": "4hzeoIOERTL4jdTXAQ0FWr",
-      "url": "https://open.spotify.com/track/4hzeoIOERTL4jdTXAQ0FWr",
+      "provider": "youtube",
+      "url": "https://www.youtube.com/watch?v=Is7yLDpPkGU",
       "language": "ko",
       "moods": [
         "cheer",
         "bright",
         "hopeful"
-      ]
+      ],
+      "youtube_id": "Is7yLDpPkGU"
     },
     {
       "id": "ost002",
@@ -671,15 +671,15 @@ window.DK_DATA={
       "title": "Missed Connections",
       "subtitle": "Tempted OST Part.3",
       "artist": "DOKYEOM",
-      "provider": "spotify",
-      "spotify_id": "4jAh51yhz3LUtbm1p7vOfY",
-      "url": "https://open.spotify.com/track/4jAh51yhz3LUtbm1p7vOfY",
+      "provider": "youtube",
+      "url": "https://www.youtube.com/watch?v=L_OWLO7lGxM",
       "language": "ko",
       "moods": [
         "night",
         "emotional",
         "ballad"
-      ]
+      ],
+      "youtube_id": "L_OWLO7lGxM"
     },
     {
       "id": "ost003",
@@ -687,15 +687,15 @@ window.DK_DATA={
       "title": "Short Hair",
       "subtitle": "Welcome to Samdal-ri OST Pt.1",
       "artist": "DOKYEOM",
-      "provider": "spotify",
-      "spotify_id": "4JCHRuXg9IRWBXtXtjgWxd",
-      "url": "https://open.spotify.com/track/4JCHRuXg9IRWBXtXtjgWxd",
+      "provider": "youtube",
+      "url": "https://www.youtube.com/watch?v=dm8uynwxU8U",
       "language": "ko",
       "moods": [
         "comfort",
         "warm",
         "bright"
-      ]
+      ],
+      "youtube_id": "dm8uynwxU8U"
     },
     {
       "id": "ost004",
@@ -703,15 +703,15 @@ window.DK_DATA={
       "title": "It's You",
       "subtitle": "Resident Playbook OST Pt.7",
       "artist": "DOKYEOM",
-      "provider": "spotify",
-      "spotify_id": "5uVlk9mO71cgaEslBnV4uc",
-      "url": "https://open.spotify.com/track/5uVlk9mO71cgaEslBnV4uc",
+      "provider": "youtube",
+      "url": "https://www.youtube.com/watch?v=hywgLy1_iXQ",
       "language": "ko",
       "moods": [
         "comfort",
         "warm",
         "emotional"
-      ]
+      ],
+      "youtube_id": "hywgLy1_iXQ"
     },
     {
       "id": "ost005",
@@ -719,15 +719,15 @@ window.DK_DATA={
       "title": "Never Losing",
       "subtitle": "Return of the Blossoming Blade OST Pt.5",
       "artist": "DOKYEOM",
-      "provider": "spotify",
-      "spotify_id": "3b0Bxz2ZxN8aYUAnNCnXqT",
-      "url": "https://open.spotify.com/track/3b0Bxz2ZxN8aYUAnNCnXqT",
+      "provider": "youtube",
+      "url": "https://www.youtube.com/watch?v=CpWOIjkLl4M",
       "language": "ko",
       "moods": [
         "cheer",
         "powerful",
         "hopeful"
-      ]
+      ],
+      "youtube_id": "CpWOIjkLl4M"
     },
     {
       "id": "ost006",
@@ -735,15 +735,15 @@ window.DK_DATA={
       "title": "Best Scene",
       "subtitle": "Curtain Up, Class OST Pt.5",
       "artist": "DOKYEOM",
-      "provider": "spotify",
-      "spotify_id": "4pvUtXwvtZx0kl7vlv8gf9",
-      "url": "https://open.spotify.com/track/4pvUtXwvtZx0kl7vlv8gf9",
+      "provider": "youtube",
+      "url": "https://www.youtube.com/watch?v=0XrGxq5cSr0",
       "language": "ko",
       "moods": [
         "emotional",
         "warm",
         "comfort"
-      ]
+      ],
+      "youtube_id": "0XrGxq5cSr0"
     },
     {
       "id": "ost007",
@@ -751,15 +751,15 @@ window.DK_DATA={
       "title": "Stay With Me",
       "subtitle": "Spooky in Love OST Pt.2",
       "artist": "DOKYEOM",
-      "provider": "spotify",
-      "spotify_id": "1fp5IB10UTzxnriQbDwdb0",
-      "url": "https://open.spotify.com/track/1fp5IB10UTzxnriQbDwdb0",
+      "provider": "youtube",
+      "url": "https://www.youtube.com/watch?v=8KuRZJqhCMU",
       "language": "ko",
       "moods": [
         "night",
         "romantic",
         "emotional"
-      ]
+      ],
+      "youtube_id": "8KuRZJqhCMU"
     },
     {
       "id": "special001",
@@ -767,15 +767,15 @@ window.DK_DATA={
       "title": "Cinematic Love",
       "subtitle": "Collaboration Single",
       "artist": "Yang Da Il · DOKYEOM",
-      "provider": "spotify",
-      "spotify_id": "30PeAwUJY5FGlH9SvttWgl",
-      "url": "https://open.spotify.com/track/30PeAwUJY5FGlH9SvttWgl",
+      "provider": "youtube",
+      "url": "https://www.youtube.com/watch?v=OQWES57ZYx8",
       "language": "ko",
       "moods": [
         "night",
         "emotional",
         "romantic"
-      ]
+      ],
+      "youtube_id": "OQWES57ZYx8"
     }
   ]
 };
