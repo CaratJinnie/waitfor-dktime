@@ -22,6 +22,18 @@
    <button class="music-tab" data-cat="ost">OST</button>
    <button class="music-tab" data-cat="special">SPECIAL</button>
  </div>
+ <div class="mood-row">
+   <div class="mood-label">PICK A MOOD</div>
+   <div class="mood-tabs">
+     <button class="mood-tab active" data-mood="all">All moods</button>
+     <button class="mood-tab" data-mood="comfort">🌻 Comfort</button>
+     <button class="mood-tab" data-mood="cheer">✨ Cheer Up</button>
+     <button class="mood-tab" data-mood="night">🌙 Night</button>
+     <button class="mood-tab" data-mood="miss">💙 Miss Him</button>
+     <button class="mood-tab" data-mood="powerful">🔥 Powerful</button>
+   </div>
+   <div class="mood-summary" id="moodSummary">All songs · let DK choose one for you.</div>
+ </div>
 </section>
 
 <section class="dk-player-page" style="margin-top:18px">
@@ -90,6 +102,7 @@ let ytPlayer=null;
 let shuffleMode=localStorage.getItem("dk-shuffle")==="1";
 let repeatMode=localStorage.getItem("dk-repeat")==="1";
 let currentCategory="all";
+let currentMood="all";
 let tick=null;
 
 function formatTime(sec){
@@ -172,12 +185,26 @@ progressHit.onclick=e=>{
  ytPlayer.seekTo(ytPlayer.getDuration()*ratio,true);
 };
 
+function applyFilters(chooseRandom=false){
+ filtered=allTracks.filter(t=>{
+   const catOK=currentCategory==="all"||t.category===currentCategory;
+   const moodOK=currentMood==="all"||(t.moods||[]).includes(currentMood);
+   return catOK&&moodOK;
+ });
+ const moodNames={all:"All moods",comfort:"🌻 Comfort",cheer:"✨ Cheer Up",night:"🌙 Night",miss:"💙 Miss Him",powerful:"🔥 Powerful"};
+ moodSummary.textContent=`${filtered.length} song${filtered.length===1?"":"s"} · ${moodNames[currentMood]}`;
+ renderPlaylist();
+ if(chooseRandom&&filtered.length)loadTrack(Math.floor(Math.random()*filtered.length),false);
+}
 function setCategory(cat){
  currentCategory=cat;
  document.querySelectorAll(".music-tab").forEach(b=>b.classList.toggle("active",b.dataset.cat===cat));
- filtered=cat==="all"?allTracks.slice():allTracks.filter(t=>t.category===cat);
- renderPlaylist();
- if(filtered.length)loadTrack(Math.floor(Math.random()*filtered.length),false);
+ applyFilters(true);
+}
+function setMood(mood){
+ currentMood=mood;
+ document.querySelectorAll(".mood-tab").forEach(b=>b.classList.toggle("active",b.dataset.mood===mood));
+ applyFilters(true);
 }
 
 function onYouTubeIframeAPIReady(){
@@ -207,8 +234,9 @@ document.addEventListener("DOMContentLoaded",()=>{
  shuffleDot.classList.toggle("show",shuffleMode);
  repeatDot.classList.toggle("show",repeatMode);
  document.querySelectorAll(".music-tab").forEach(b=>b.onclick=()=>setCategory(b.dataset.cat));
+ document.querySelectorAll(".mood-tab").forEach(b=>b.onclick=()=>setMood(b.dataset.mood));
  filtered=allTracks.slice();
- renderPlaylist();
+ applyFilters(false);
  if(filtered.length)loadTrack(Math.floor(Math.random()*filtered.length),false);
 });
 </script>
