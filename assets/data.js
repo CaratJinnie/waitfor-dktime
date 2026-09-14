@@ -287,5 +287,178 @@ window.DK_DATA={
       },
       "url": "https://x.com/pledis_17"
     }
+  ],
+  "covers": [
+    {
+      "id": "c001",
+      "title": "길",
+      "original_artist": "Paul Kim",
+      "language": "ko",
+      "moods": [
+        "comfort",
+        "night",
+        "ballad"
+      ],
+      "tags": [
+        "폴킴",
+        "paul kim",
+        "길",
+        "ballad",
+        "comfort"
+      ],
+      "url": "https://weverse.io/seventeen/media/0-9509060?hl=ko"
+    },
+    {
+      "id": "c002",
+      "title": "사랑했던걸까",
+      "original_artist": "Yang Da Il",
+      "language": "ko",
+      "moods": [
+        "ballad",
+        "emotional",
+        "night"
+      ],
+      "tags": [
+        "양다일",
+        "yang da il",
+        "사랑했던걸까",
+        "ballad"
+      ],
+      "url": "https://weverse.io/seventeen/media/2-105469892?hl=ko"
+    },
+    {
+      "id": "c003",
+      "title": "행운을 빌어 줘",
+      "subtitle": "A Journey",
+      "original_artist": "WONPIL",
+      "language": "ko",
+      "moods": [
+        "cheer",
+        "comfort",
+        "hopeful"
+      ],
+      "tags": [
+        "원필",
+        "wonpil",
+        "행운을 빌어 줘",
+        "a journey",
+        "hopeful"
+      ],
+      "url": "https://weverse.io/seventeen/media/1-105307200?hl=ko",
+      "behind": "https://weverse.io/seventeen/media/1-105613374"
+    },
+    {
+      "id": "c004",
+      "title": "ベテルギウス",
+      "subtitle": "Betelgeuse",
+      "original_artist": "Yuuri",
+      "language": "ja",
+      "moods": [
+        "emotional",
+        "night",
+        "powerful"
+      ],
+      "tags": [
+        "優里",
+        "yuuri",
+        "betelgeuse",
+        "ベテルギウス",
+        "japanese"
+      ],
+      "url": "https://weverse.io/seventeen/media/3-122845076?hl=ko",
+      "behind": "https://weverse.io/seventeen/media/4-127887619"
+    },
+    {
+      "id": "c005",
+      "title": "결국 아무것도 알 수 없었지만",
+      "original_artist": "LUCY",
+      "language": "ko",
+      "moods": [
+        "band",
+        "emotional",
+        "powerful"
+      ],
+      "tags": [
+        "lucy",
+        "결국 아무것도 알 수 없었지만",
+        "band"
+      ],
+      "url": "https://weverse.io/seventeen/media/3-156761221?hl=ko"
+    },
+    {
+      "id": "c006",
+      "title": "HAPPY",
+      "original_artist": "DAY6",
+      "language": "ko",
+      "moods": [
+        "cheer",
+        "bright",
+        "band"
+      ],
+      "tags": [
+        "day6",
+        "happy",
+        "bright",
+        "cheer"
+      ],
+      "url": "https://weverse.io/seventeen/media/4-168877483?hl=ko"
+    },
+    {
+      "id": "c007",
+      "title": "BUTTER-FLY",
+      "original_artist": "Kōji Wada",
+      "language": "ja",
+      "moods": [
+        "cheer",
+        "nostalgia",
+        "powerful"
+      ],
+      "tags": [
+        "kōji wada",
+        "koji wada",
+        "butter-fly",
+        "digimon",
+        "japanese",
+        "nostalgia"
+      ],
+      "url": "https://weverse.io/seventeen/media/0-160741008?hl=ko"
+    },
+    {
+      "id": "c008",
+      "title": "Lost Stars",
+      "original_artist": "Adam Levine",
+      "language": "en",
+      "moods": [
+        "night",
+        "emotional",
+        "english"
+      ],
+      "tags": [
+        "adam levine",
+        "lost stars",
+        "english",
+        "night"
+      ],
+      "url": "https://weverse.io/seventeen/media/3-184961599?hl=ko",
+      "behind": "https://weverse.io/seventeen/media/3-186195519?hl=ko"
+    },
+    {
+      "id": "c009",
+      "title": "Universe",
+      "original_artist": "DAESUNG",
+      "language": "ko",
+      "moods": [
+        "emotional",
+        "comfort",
+        "powerful"
+      ],
+      "tags": [
+        "대성",
+        "daesung",
+        "universe",
+        "comfort"
+      ],
+      "url": "https://weverse.io/seventeen/media/3-206219518?hl=ko"
+    }
   ]
 };

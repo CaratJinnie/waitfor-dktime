@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DK Cover Archive · Waiting for DK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<nav class="site-nav"></nav>
+
+<section class="cover-hero">
+ <article class="glass section">
+  <div class="eyebrow">DK COVER ARCHIVE</div>
+  <h1 class="page-title">When you just<br>want to hear him sing.</h1>
+  <p class="lede">从语言、情绪和原唱继续探索。每一首都保留官方来源，不把粉丝搬运当主链接。</p>
+  <div class="row"><a class="btn" href="archive.html">← Back to Archive</a><button class="btn primary" id="randomCover">🎲 Random Cover</button></div>
+ </article>
+ <aside class="glass cover-stats">
+  <div><div class="eyebrow">FIRST COLLECTION</div><div class="number" id="coverCount">9</div></div>
+  <p class="lede">第一批先从已经确认的官方 Cover 开始。之后继续扩充。</p>
+ </aside>
+</section>
+
+<section class="glass section">
+ <div class="section-head">
+  <div><div class="eyebrow">FILTER BY FEELING</div><h2 class="section-title">What do you want to hear tonight?</h2></div>
+ </div>
+ <div class="filters">
+  <button class="filter active" data-filter="all">All</button>
+  <button class="filter" data-filter="comfort">🌻 Comfort</button>
+  <button class="filter" data-filter="cheer">✨ Cheer up</button>
+  <button class="filter" data-filter="night">🌙 Night</button>
+  <button class="filter" data-filter="powerful">🔥 Powerful</button>
+  <button class="filter" data-filter="ko">한국어</button>
+  <button class="filter" data-filter="ja">日本語</button>
+  <button class="filter" data-filter="en">English</button>
+ </div>
+ <div class="cover-grid" id="coverGrid"></div>
+</section>
+
+<footer class="footer"></footer>
+</div>
+<div class="modal-back" id="modalBack"><div class="modal"><button class="close" id="modalClose">×</button><div id="modalContent"></div></div></div>
+<script src="assets/data.js"></script><script src="assets/app.js"></script>
+<script>
+let coverFilter="all";
+function languageLabel(x){return x==="ko"?"Korean":x==="ja"?"Japanese":"English"}
+function renderCovers(){
+ let arr=DATA.covers||[];
+ if(coverFilter!=="all")arr=arr.filter(c=>c.language===coverFilter||c.moods.includes(coverFilter)||c.tags.includes(coverFilter));
+ coverGrid.innerHTML=arr.map(c=>`
+ <article class="cover-card">
+  <div>
+   <div class="eyebrow">${languageLabel(c.language)} · COVER</div>
+   <div class="cover-title">${c.title}${c.subtitle?` <small>(${c.subtitle})</small>`:""}</div>
+   <div class="artist">Original · ${c.original_artist}</div>
+   <div class="cover-tags">${c.moods.slice(0,3).map(t=>`<span>${t}</span>`).join("")}</div>
+  </div>
+  <div class="row">
+   <a class="btn primary" href="${c.url}" target="_blank">Listen / Watch ↗</a>
+   ${c.behind?`<a class="btn" href="${c.behind}" target="_blank">Behind ↗</a>`:""}
+  </div>
+ </article>`).join("");
+}
+document.addEventListener("DOMContentLoaded",()=>{
+ initNav("archive"); coverCount.textContent=(DATA.covers||[]).length; renderCovers();
+ document.querySelectorAll("[data-filter]").forEach(b=>b.onclick=()=>{document.querySelectorAll("[data-filter]").forEach(x=>x.classList.remove("active"));b.classList.add("active");coverFilter=b.dataset.filter;renderCovers()});
+ randomCover.onclick=()=>{const arr=DATA.covers||[];const c=arr[Math.floor(Math.random()*arr.length)];window.open(c.url,"_blank")}
+});
+</script>
+</body></html>

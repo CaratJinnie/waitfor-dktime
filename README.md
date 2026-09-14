@@ -15,3 +15,5 @@
 - assets/data.js
 
 这版使用 data.js，所以直接双击 HTML 也能运行大部分互动；上传 GitHub Pages 后页面之间会正常跳转。
+
+- covers.html — DK Cover Archive（第一批 9 首官方 Cover）
