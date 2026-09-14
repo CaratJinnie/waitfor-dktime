@@ -66,3 +66,13 @@
 .player-note{margin-top:12px;color:var(--muted);font-size:.76rem;line-height:1.55}
 @media(max-width:980px){.dk-player-page{grid-template-columns:1fr}.playlist-panel{position:static}.playlist{max-height:none}}
 @media(max-width:520px){.dk-player-card{padding:8px}.play-state-icon{width:46px;height:46px;font-size:18px}.now-playing h2{font-size:1.7rem}.playlist-panel{padding:17px}}
+
+/* v8 Music Room */
+.music-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0 3px}
+.music-tab{border:1px solid var(--line);background:rgba(255,255,255,.58);border-radius:999px;padding:9px 13px;cursor:pointer;color:var(--ink);font:inherit}
+.music-tab.active{background:linear-gradient(90deg,var(--blue2),var(--pink2));font-weight:750}
+.provider-badge{display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.58);font-size:.65rem;color:var(--muted)}
+.spotify-stage{position:absolute;inset:0;width:100%;height:100%;z-index:1;background:#000;display:none}
+.spotify-stage.active{display:block}
+.spotify-stage iframe{border:0;width:100%;height:100%}
+.music-empty{padding:25px;border:1px dashed var(--line);border-radius:18px;text-align:center;color:var(--muted)}

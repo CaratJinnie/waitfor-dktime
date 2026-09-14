@@ -478,5 +478,304 @@ window.DK_DATA={
       "youtube_id": "dzXy8lA0qeA",
       "youtube_url": "https://www.youtube.com/watch?v=dzXy8lA0qeA"
     }
+  ],
+  "music": [
+    {
+      "id": "c001",
+      "category": "cover",
+      "title": "길",
+      "subtitle": "",
+      "artist": "Paul Kim",
+      "provider": "youtube",
+      "youtube_id": "fdMS5HTQGX4",
+      "url": "https://www.youtube.com/watch?v=fdMS5HTQGX4",
+      "behind": null,
+      "language": "ko",
+      "moods": [
+        "comfort",
+        "night",
+        "ballad"
+      ]
+    },
+    {
+      "id": "c002",
+      "category": "cover",
+      "title": "사랑했던걸까",
+      "subtitle": "",
+      "artist": "Yang Da Il",
+      "provider": "youtube",
+      "youtube_id": "v3UW6oTw_ks",
+      "url": "https://www.youtube.com/watch?v=v3UW6oTw_ks",
+      "behind": null,
+      "language": "ko",
+      "moods": [
+        "ballad",
+        "emotional",
+        "night"
+      ]
+    },
+    {
+      "id": "c003",
+      "category": "cover",
+      "title": "행운을 빌어 줘",
+      "subtitle": "A Journey",
+      "artist": "WONPIL",
+      "provider": "youtube",
+      "youtube_id": "FcACC2nLArk",
+      "url": "https://www.youtube.com/watch?v=FcACC2nLArk",
+      "behind": "https://weverse.io/seventeen/media/1-105613374",
+      "language": "ko",
+      "moods": [
+        "cheer",
+        "comfort",
+        "hopeful"
+      ]
+    },
+    {
+      "id": "c004",
+      "category": "cover",
+      "title": "ベテルギウス",
+      "subtitle": "Betelgeuse",
+      "artist": "Yuuri",
+      "provider": "youtube",
+      "youtube_id": "v9lZPRg71Tk",
+      "url": "https://www.youtube.com/watch?v=v9lZPRg71Tk",
+      "behind": "https://weverse.io/seventeen/media/4-127887619",
+      "language": "ja",
+      "moods": [
+        "emotional",
+        "night",
+        "powerful"
+      ]
+    },
+    {
+      "id": "c005",
+      "category": "cover",
+      "title": "결국 아무것도 알 수 없었지만",
+      "subtitle": "",
+      "artist": "LUCY",
+      "provider": "youtube",
+      "youtube_id": "d6ZY8MH3L-A",
+      "url": "https://www.youtube.com/watch?v=d6ZY8MH3L-A",
+      "behind": null,
+      "language": "ko",
+      "moods": [
+        "band",
+        "emotional",
+        "powerful"
+      ]
+    },
+    {
+      "id": "c006",
+      "category": "cover",
+      "title": "HAPPY",
+      "subtitle": "",
+      "artist": "DAY6",
+      "provider": "youtube",
+      "youtube_id": "4cIniILXP7I",
+      "url": "https://www.youtube.com/watch?v=4cIniILXP7I",
+      "behind": null,
+      "language": "ko",
+      "moods": [
+        "cheer",
+        "bright",
+        "band"
+      ]
+    },
+    {
+      "id": "c007",
+      "category": "cover",
+      "title": "BUTTER-FLY",
+      "subtitle": "",
+      "artist": "Kōji Wada",
+      "provider": "youtube",
+      "youtube_id": "0nOpfN3NWnA",
+      "url": "https://www.youtube.com/watch?v=0nOpfN3NWnA",
+      "behind": null,
+      "language": "ja",
+      "moods": [
+        "cheer",
+        "nostalgia",
+        "powerful"
+      ]
+    },
+    {
+      "id": "c008",
+      "category": "cover",
+      "title": "Lost Stars",
+      "subtitle": "",
+      "artist": "Adam Levine",
+      "provider": "youtube",
+      "youtube_id": "LfOe8NCCrQo",
+      "url": "https://www.youtube.com/watch?v=LfOe8NCCrQo",
+      "behind": "https://weverse.io/seventeen/media/3-186195519?hl=ko",
+      "language": "en",
+      "moods": [
+        "night",
+        "emotional",
+        "english"
+      ]
+    },
+    {
+      "id": "c009",
+      "category": "cover",
+      "title": "Universe",
+      "subtitle": "",
+      "artist": "DAESUNG",
+      "provider": "youtube",
+      "youtube_id": "dzXy8lA0qeA",
+      "url": "https://www.youtube.com/watch?v=dzXy8lA0qeA",
+      "behind": null,
+      "language": "ko",
+      "moods": [
+        "emotional",
+        "comfort",
+        "powerful"
+      ]
+    },
+    {
+      "id": "solo001",
+      "category": "solo",
+      "title": "Rockstar (DK Solo)",
+      "subtitle": "Serenade",
+      "artist": "DxS · DOKYEOM",
+      "provider": "spotify",
+      "spotify_id": "6pPy2mkcDeVu7SJaOGnCUv",
+      "url": "https://open.spotify.com/track/6pPy2mkcDeVu7SJaOGnCUv",
+      "language": "ko",
+      "moods": [
+        "powerful",
+        "cheer",
+        "energetic"
+      ]
+    },
+    {
+      "id": "ost001",
+      "category": "ost",
+      "title": "Go!",
+      "subtitle": "Twenty-Five Twenty-One OST Part 5",
+      "artist": "DOKYEOM",
+      "provider": "spotify",
+      "spotify_id": "4hzeoIOERTL4jdTXAQ0FWr",
+      "url": "https://open.spotify.com/track/4hzeoIOERTL4jdTXAQ0FWr",
+      "language": "ko",
+      "moods": [
+        "cheer",
+        "bright",
+        "hopeful"
+      ]
+    },
+    {
+      "id": "ost002",
+      "category": "ost",
+      "title": "Missed Connections",
+      "subtitle": "Tempted OST Part.3",
+      "artist": "DOKYEOM",
+      "provider": "spotify",
+      "spotify_id": "4jAh51yhz3LUtbm1p7vOfY",
+      "url": "https://open.spotify.com/track/4jAh51yhz3LUtbm1p7vOfY",
+      "language": "ko",
+      "moods": [
+        "night",
+        "emotional",
+        "ballad"
+      ]
+    },
+    {
+      "id": "ost003",
+      "category": "ost",
+      "title": "Short Hair",
+      "subtitle": "Welcome to Samdal-ri OST Pt.1",
+      "artist": "DOKYEOM",
+      "provider": "spotify",
+      "spotify_id": "4JCHRuXg9IRWBXtXtjgWxd",
+      "url": "https://open.spotify.com/track/4JCHRuXg9IRWBXtXtjgWxd",
+      "language": "ko",
+      "moods": [
+        "comfort",
+        "warm",
+        "bright"
+      ]
+    },
+    {
+      "id": "ost004",
+      "category": "ost",
+      "title": "It's You",
+      "subtitle": "Resident Playbook OST Pt.7",
+      "artist": "DOKYEOM",
+      "provider": "spotify",
+      "spotify_id": "5uVlk9mO71cgaEslBnV4uc",
+      "url": "https://open.spotify.com/track/5uVlk9mO71cgaEslBnV4uc",
+      "language": "ko",
+      "moods": [
+        "comfort",
+        "warm",
+        "emotional"
+      ]
+    },
+    {
+      "id": "ost005",
+      "category": "ost",
+      "title": "Never Losing",
+      "subtitle": "Return of the Blossoming Blade OST Pt.5",
+      "artist": "DOKYEOM",
+      "provider": "spotify",
+      "spotify_id": "3b0Bxz2ZxN8aYUAnNCnXqT",
+      "url": "https://open.spotify.com/track/3b0Bxz2ZxN8aYUAnNCnXqT",
+      "language": "ko",
+      "moods": [
+        "cheer",
+        "powerful",
+        "hopeful"
+      ]
+    },
+    {
+      "id": "ost006",
+      "category": "ost",
+      "title": "Best Scene",
+      "subtitle": "Curtain Up, Class OST Pt.5",
+      "artist": "DOKYEOM",
+      "provider": "spotify",
+      "spotify_id": "4pvUtXwvtZx0kl7vlv8gf9",
+      "url": "https://open.spotify.com/track/4pvUtXwvtZx0kl7vlv8gf9",
+      "language": "ko",
+      "moods": [
+        "emotional",
+        "warm",
+        "comfort"
+      ]
+    },
+    {
+      "id": "ost007",
+      "category": "ost",
+      "title": "Stay With Me",
+      "subtitle": "Spooky in Love OST Pt.2",
+      "artist": "DOKYEOM",
+      "provider": "spotify",
+      "spotify_id": "1fp5IB10UTzxnriQbDwdb0",
+      "url": "https://open.spotify.com/track/1fp5IB10UTzxnriQbDwdb0",
+      "language": "ko",
+      "moods": [
+        "night",
+        "romantic",
+        "emotional"
+      ]
+    },
+    {
+      "id": "special001",
+      "category": "special",
+      "title": "Cinematic Love",
+      "subtitle": "Collaboration Single",
+      "artist": "Yang Da Il · DOKYEOM",
+      "provider": "spotify",
+      "spotify_id": "30PeAwUJY5FGlH9SvttWgl",
+      "url": "https://open.spotify.com/track/30PeAwUJY5FGlH9SvttWgl",
+      "language": "ko",
+      "moods": [
+        "night",
+        "emotional",
+        "romantic"
+      ]
+    }
   ]
 };

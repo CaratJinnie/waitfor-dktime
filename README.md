@@ -19,3 +19,5 @@
 - covers.html — DK Cover Archive（第一批 9 首官方 Cover）
 
 - v7: covers.html upgraded to a custom YouTube player using the user's DK player artwork, with random initial track, playlist switching, favorite, previous/next, play/pause, shuffle, repeat, seek bar.
+
+- v8: Music Room categories: Covers / Solo / OST / Special, mixed official YouTube + Spotify embeds.
